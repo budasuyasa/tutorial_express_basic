@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Buku</title>
+</head>
+<body>
+    <!-- Menampilkan data buku yang dishare dari index.js -->
+    <h1>Data Buku</h1>
+    <ul>
+        <!-- Karena buku berupa array, gunakan perulanagan untuk menampilkan setiap data buku -->
+        <% for( let index = 0; index < buku.length; index++ ) { %>
+            <li><%= buku.judul %></li>
+        <% } %>
+    </ul>
+</body>
+</html>

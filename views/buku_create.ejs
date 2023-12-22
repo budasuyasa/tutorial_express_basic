@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Buku Baru</title>
+    <style>
+        input {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/buku/simpan">
+        <label>Judul Buku</label>
+        <input type="text" name="judul" />
+        <label>Tahun Terbit</label>
+        <input type="number" name="tahun_terbit" />
+        <label>Pengarang</label>
+        <input type="text" name="pengarang" />
+        <input type="submit"  value="Simpan">
+    </form>
+    
+</body>
+</html>
