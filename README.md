@@ -164,6 +164,11 @@ engine express pada bagian selanjutnya.
 
 ## Menggunakan EJS
 
+EJS memungkinkan kita untuk menggunakan Javascript di dalam HTML. Ini
+memungkinkan kita untuk menambahkan logic di dalam template HTML. Misalkan kita
+bisa mengeksekusi Javascript statement seperti `for`, `if`, `forEach` dan
+berbagai keyword lainnya.
+
 EJS atau ejs perlu kita instal terlebih dahulu dengan menggunakan npm.
 
 ```bash
@@ -535,7 +540,29 @@ Ulangi proses pengisian data pada path `buku/create` dan cek data dalam table
 buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil
 pada jendela console.
 
-Referensi:
+## Langkah belajar selanjutnya
+
+Tutorial ini hanya mengulas bagian dasar yang perlu diketahui untuk membangun
+aplikasi web dinamis dengan Javascript. Lanjutkan proses belajar dengan
+mendalami berbagai macam konsep lain seperti:
+
+- Form validation atau validasi form untuk melakukan validasi request body atau
+  query parameter agar dapat patukjh pada kriteria yang ditentukan. Referensi:
+  [Express Validator](https://express-validator.github.io/docs/)
+- Security atau keamanan. Memastikan aplikasi yang dibangun dilengkapi dengan
+  mekanisme perlindungan untuk menghindari serangan XSS, SQL injection dan jenis
+  serangan lainnya. Referensi: [Helmet.js](https://helmetjs.github.io/)
+- Arsitektur: mengorganisasikan dan menyusun code dalam aplikasi agar mengikuti
+  suatu paradigma tertentu, misalkan MVC. Ini akan membantu proses pengembangan
+  jadi lebih mudah untuk dipahami dan dirawat. Referensi:
+  [Express.js MVC](https://expressjs.com/en/starter/generator.html)
+- Logging: menggunakan framework atau log library untuk memudahkan proses
+  debugging sehingga kesalahan pada aplikasi mudah ditelusuri. Referensi:
+  [Morgan](https://www.npmjs.com/package/morgan)
+- Database Migration: Memudahkan proses pembuatan skema database serta migrasi
+  database. Referensi: [Knex.js Migrations](http://knexjs.org/#Migrations)
+
+## Referensi:
 
 - [Express](https://expressjs.com/)
 - [EJS](https://ejs.co/)
