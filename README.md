@@ -546,7 +546,7 @@ aplikasi web dinamis dengan Javascript. Lanjutkan proses belajar dengan
 mendalami berbagai macam konsep lain seperti:
 
 - Form validation atau validasi form untuk melakukan validasi request body atau
-  query parameter agar dapat patukjh pada kriteria yang ditentukan. Referensi:
+  query parameter agar dapat patuh pada kriteria yang ditentukan. Referensi:
   [Express Validator](https://express-validator.github.io/docs/)
 - Security atau keamanan. Memastikan aplikasi yang dibangun dilengkapi dengan
   mekanisme perlindungan untuk menghindari serangan XSS, SQL injection dan jenis
