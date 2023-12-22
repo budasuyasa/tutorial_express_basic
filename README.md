@@ -355,7 +355,7 @@ app.get("/buku", (req, res) => {
 });
 ```
 
-Kemudian Siapkan sebuah file `ejs` dengan nama `buku.index.ejs` pada directory
+Kemudian Siapkan sebuah file `ejs` dengan nama `buku_index.ejs` pada directory
 `views`.
 
 ```bash
@@ -385,7 +385,7 @@ Kemudian isikan kode berikut ini:
 </html>
 ```
 
-Kita bisa lihat pada `buku.index.ejs`, property `buku` dari `index.js` berubah
+Kita bisa lihat pada `buku_index.ejs`, property `buku` dari `index.js` berubah
 menjadi variabel. `buku` merupakan array yang berisikan objek hasil dari query
 database, sehingga kita bisa iterasi dengan menggunakan statement `for`.
 
@@ -431,7 +431,7 @@ memasukan judul buku, tahun terbit dan pengarang.
 </html>
 ```
 
-Dalam `buku.create.ejs` kita menambahkan form yang memiliki attribute action ke
+Dalam `buku_create.ejs` kita menambahkan form yang memiliki attribute action ke
 path `buku/simpan`. Selanjutnya kita akan membuat path ini dengan handlernya.
 Data yang kita kirimkan terdiri dari beberapa variabel yaitu `judul`,
 `tahun_terbit`, dan `pengarang`.
@@ -440,7 +440,7 @@ Selanjutnya mari kita buat path `/buku/create` untuk menampilkan template form
 yang sudah kita di atas.
 
 ```javascript
-app.route("/buku/create", (req, res) => {
+app.get("/buku/create", (req, res) => {
   res.render("buku.create");
 });
 ```
