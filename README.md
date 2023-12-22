@@ -560,7 +560,7 @@ mendalami berbagai macam konsep lain seperti:
   debugging sehingga kesalahan pada aplikasi mudah ditelusuri. Referensi:
   [Morgan](https://www.npmjs.com/package/morgan)
 - Database Migration: Memudahkan proses pembuatan skema database serta migrasi
-  database. Referensi: [Knex.js Migrations](http://knexjs.org/#Migrations)
+  database. Referensi: [Knex.js Migrations](https://knexjs.org/guide/migrations.html)
 
 ## Referensi:
 
