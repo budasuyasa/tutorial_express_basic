@@ -1,10 +1,10 @@
-# Tutorial Express Basic
+# Tutorial Express Dasar
 
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
-menggunakan ExpressJS. ExpressJs adalah salah satu framework untuk membuat
-Fullstack web application. Express sangat meninimal, mudah dipelajari, dan
-sangat cocok digunakan untuk membuat berbagai macam aplikasi, baik dari skala
-kecil hingga skala yang besar.
+menggunakan ExpressJS atau secara singkat bisa disebut engan Express. ExpressJs
+adalah salah satu framework untuk membuat Fullstack web application. Express
+sangat meninimal, mudah dipelajari, dan sangat cocok digunakan untuk membuat
+berbagai macam aplikasi, baik dari skala kecil hingga skala yang besar.
 
 Express sangat modular dan didukung oleh berbagai macam plugin, sehingga membuat
 proses pembuatan aplikasi menjadi lebih mudah dan solid. Express bisa
@@ -31,7 +31,7 @@ beberapa konsep berikut terlebih dahulu:
   - Perulangan
   - Function
   - Object
-- Dasar SQL Database 
+- Dasar SQL Database
 - Basic NodeJS
 
 ## Memulai Proyek Express
@@ -54,9 +54,9 @@ About to write to /Users/budasuyasa/Desktop/Tutorial ExpressJS /package.json:
 
 Kemudian, install Express dengan `npm install express --save`.
 
-Dalam tutorial ini, kita menggunakna index.js sebagai entry point dari web
+Dalam tutorial ini, kita menggunakan `index.js` sebagai entry point dari web
 server yang akan kita buat dengan Express. Jadi, buatlah sebuah file baru dengan
-nama index.js. Di dalam index.js kita akan membuat sebuah web server dengan
+nama `index.js`. Di dalam `index.js` kita akan membuat sebuah web server dengan
 Express.
 
 ```javascript
@@ -86,10 +86,11 @@ aplikasi kita.
 Method `get()` dan `post()` menerima 2 buah parameter. Parameter pertama adalah
 path apa yang mau kita daftarkan dan parameter kedua yaitu function callback
 handler dari path tersebut. Handler adalah istilah yang kita pakai untuk
-menunjukan proses apa yang akan terjadi apabila sebuah path dikunjungi. Handler
-ditulis dengan menggunakan function. Dalam function handler terdapat 2 buah
-parameter yang dipass. Parameter pertama dari handler adalah object `Request`
-dan parameter kedua adalah object `Response`. Kedua object ini akan kita bahasa
+menunjukan proses apa yang akan terjadi apabila sebuah path dikunjungi.
+
+Handler ditulis dengan menggunakan function. Dalam function handler terdapat 2
+buah parameter. Parameter pertama dari handler adalah object `Request` dan
+parameter kedua adalah object `Response`. Kedua object ini akan kita bahasa
 lebih lanjut nanti.
 
 Mari kita coba tambahkan path baru setelah route `/`.
@@ -103,7 +104,7 @@ app.get("/profile", (req, res) => {
 Dalam contoh di atas, dalam membuat handler, kita menggunakan arrow function.
 Arrow sejatinya adalah sebuah function biasa yang syntaxnya lebih ekspresif.
 
-Jika tanpa arrow function, sintaks di atas menjadi sebagai berikut:
+Jika tanpa arrow function, syntax di atas menjadi sebagai berikut:
 
 ```javascript
 app.get("/profile", function (req, res) {
@@ -118,11 +119,8 @@ melalui web browser.
 
 ## Query Parameter
 
-Kita dapat mengakses query parameter yang datang dari URL melalui object
-`Request`  
-pada function handler. Pada contoh sebelumnya object `Request` kita tulis dengan
-menggunak variabel `req`. Misalkan kita ingin mengkases value dari Query
-paramteer dari URL berikut:
+Kita dapat mengakses query parameter yang datang dari URL melalui object `req`.
+Misalkan kita ingin mengkases value dari Query paramteer dari URL berikut:
 
 ```
 http://localhost:3000/profile?nama=Agus
@@ -149,9 +147,9 @@ Template engine merupakan library yang bisa kita gunakan untuk menghasilkan HTML
 template. Pada contoh sebelumnya, response yang kita berikan ketika sebuah path
 diakses masih berupa teks saja.
 
-Apabila kita mengembalikan kode HTML pada res.send(), maka kode yang kita tulis
-menjadi tidak rapi dan akan sangat sulit untuk dibaca. Apabila sulit dibaca,
-tentunya akan sulit untuk dipahami.
+Apabila kita mengembalikan kode HTML pada `res.send()`, maka code yang kita
+tulis menjadi tidak rapi dan akan sangat sulit untuk dibaca. Apabila sulit
+dibaca, tentunya akan sulit untuk dipahami.
 
 Untuk membuat code kita menjadi lebih mudah ditulis dan terorganisir, kita akan
 memisahkan logic dan template. Maka dari itu kita memerlukan template engine.
@@ -161,12 +159,12 @@ proses belajar, dalam tutorial ini kita akan menggunakan ejs. ejs adalah salah
 satu template engine populer yang digunakan saat menulis aplikasi dengan
 express.
 
-Kita akan belajar cara menginstall, mengkonfigurasi dan menggunakn template
+Kita akan belajar cara menginstall, mengkonfigurasi, dan menggunakan template
 engine express pada bagian selanjutnya.
 
-## Menggunakan ejs
+## Menggunakan EJS
 
-ejs perlu kita instal terlebih dahulu dengan menggunakan npm.
+EJS atau ejs perlu kita instal terlebih dahulu dengan menggunakan npm.
 
 ```bash
 npm install ejs --save
@@ -180,15 +178,12 @@ object express.
 const express = require("express");
 const app = express();
 
-app.get("/profile", function (req, res) {
-  res.send("Ini adalah halaman profile");
-});
-// kode setelahnya
+app.set("view engine", "ejs");
 ```
 
-Kini kita siap menggunakan ejs. Buatlah sebuah directory/folder baru dengan nama
-views pada root directory project. Di dalam directory viwes, tambahkan sebuah
-file baru dengan nama `profile.ejs`.
+Kini kita ejs siap digunakan. Sekarang, buatlah sebuah directory/folder baru
+dengan nama **views** pada root directory project. Di dalam directory views,
+tambahkan sebuah file baru dengan nama `profile.ejs`.
 
 ```html
 <!DOCTYPE html>
@@ -219,16 +214,16 @@ res.render("profile");
 Pada kode sebelumnya, ketika path `/profile` dikunjungi, ia akan merespon teks
 `Ini adalah halaman profile`. Ini kita ganti dengan method `res.render()`.
 Method ini akan merender `profile.ejs` yang ada di dalam directory view sebagai
-response dan request. Kunjungi kembali path review untuk melihat hasil perubaha
-yang terjadi.
+response dan request. Kunjungi kembali path `/profile` untuk melihat hasil
+perubahan yang telah dilakukan.
 
-## Membagi variable ke template
+## Membagikan variable ke template ejs
 
 Dalam membuat aplikasi web yang dinamis tentunya kita akan perlu membagikan
 variable dari sisi logic ke template. Ini bisa kita lakukan dengan menambahkan
-parameter data pada method `render()`.
+parameter `data` pada method `render()`.
 
-Pada parameter data, kita bisa mengirimkan object ke template. Setiap property
+Pada parameter `data`, kita bisa mengirimkan object ke template. Setiap property
 object akan menjelma menjadi variabel pada template. Sebagai contoh, lakukan
 perubahan berikut pada `index.js`.
 
@@ -267,14 +262,14 @@ memudahkan proses penulisan query.
 ## Menyiapkan database
 
 Pertama kita akan membuat database terlebih dahulu. Proses ini bisa dilakukan
-dengan menggunakan database client seperti PHPMyAdmin, Datagrip atau yang
-lainnnya. Anda juga bisa menggunakan MySQL console jika lebih prefer cara
+dengan menggunakan database client seperti PHPMyAdmin, Datagrip, HeidiSQL atau
+yang lainnnya. Anda juga bisa menggunakan MySQL console jika lebih prefer cara
 tersebut.
 
-Pertama mari kita buat sebuah database dengan nama buku.
+Pertama mari kita buat sebuah database dengan nama **buku**.
 
 ```sql
--- Buat basish data dengan nama buku
+-- Buat database dengan nama buku
 create database buku;
 -- gunakan buku
 use buku;
@@ -294,14 +289,14 @@ INSERT INTO buku (judul, tahun_terbit, pengarang) VALUES
 ('Novel Informatika', 2005, 'Satoru Gotopedia');
 ```
 
-Di dalam SQL query di atas kita telah menyiapkan sebuah database dengan nama
+Di dalam SQL query di atas, kita telah menyiapkan sebuah database dengan nama
 buku dan sebuah table dengan nama buku. Kita juga telah memasukan beberapa data
 ke dalam table yang nanti kita akan gunakan sebagai data dummy.
 
 ## Menyiapkan Knex dan koneksi database
 
-Selanjutnya mari kita install KnexJS dan modul mysql ke dalam proyek kita dengan
-menggunakan perintah:
+Selanjutnya mari kita install Knex.js dan modul **mysql** ke dalam proyek kita
+dengan menggunakan perintah:
 
 ```bash
 npm install --save knex mysql
@@ -314,23 +309,21 @@ ini:
 ```javascript
 // sesuaikan variabel konfigurasi dengan konfigurasi database yang Anda gunakan
 module.exports = {
-  development: {
-    client: "mysql",
-    connection: {
-      host: "127.0.0.1",
-      user: "root",
-      password: "buku",
-      database: "",
-    },
+  client: "mysql",
+  connection: {
+    host: "127.0.0.1",
+    user: "root",
+    password: "buku",
+    database: "",
   },
 };
 ```
 
-Selanjutnya, mari kita pakai knex ke dalam aplikasi kita. Tambahkan code berikut
-pada `index.js`.
+Selanjutnya, mari kita pakai knex ke dalam index.js. Tambahkan code berikut pada
+`index.js`.
 
 ```javascript
-const knex = require("knex")(require("./knexfile").development);
+const knex = require("knex")(require("./knexfile"));
 ```
 
 ## Melakukan query pertama
@@ -348,29 +341,33 @@ app.get("/buku", (req, res) => {
 });
 ```
 
-Pada contoh di atas kita melakukan query dengan memanggil object knex dengan
+Pada contoh di atas, kita melakukan query dengan memanggil object knex dengan
 memberikan nama table yang akan dilibatkan dalam proses query. Kemudian, kita
 bisa melakukan method chaining dalam mengeksekusi atau menambahkan query
 selanjutnya. Kita dapat menangkap hasi query dari Promises method `then()` dan
 menangkap error (jika terjadi error) pada chainging method `catch()`.
 
-Kunjungi path `/buku` pada web browser dan check console. Pada console akan
-menampilkan array of object yang berisikan data yang diambil dari database.
+Kunjungi path `/buku` pada web browser dan cek log console web server. Console
+akan menampilkan array of object yang berisikan data yang diambil dari table
+buku.
 
 ## Menampilkan hasil select query ke dalam template
 
-Selanjutnya mari kita tampilkan setiap data yang sudah diambil dari basis data
-ke dalam template atau view.
+Selanjutnya mari kita tampilkan setiap data yang sudah diambil table buku ke
+dalam template atau view.
 
 Kita akan melakukan perubahan pada handler path `/buku` dengan menambahkan code
-yang menampilkan hasil query ke dalam template `buku.index.ejs` di atas:
+yang menampilkan hasil query ke dalam template `buku_index.ejs`:
 
 ```javascript
 app.get("/buku", (req, res) => {
   knex("buku")
     .select("*")
     .then((data) => {
-      res.render("buku.index", {
+      // load buku_index.ejs dan bagikan data
+      // ke template. Perhatikan paramter kedua dari
+      // res.render
+      res.render("buku_index", {
         buku: data,
       });
     })
@@ -409,22 +406,24 @@ Kemudian isikan kode berikut ini:
 ```
 
 Kita bisa lihat pada `buku_index.ejs`, property `buku` dari `index.js` berubah
-menjadi variabel. `buku` merupakan array yang berisikan objek hasil dari query
-database, sehingga kita bisa iterasi dengan menggunakan statement `for`.
+menjadi variabel. Value dari property `buku` merupakan array yang berisikan
+objek hasil dari query database, sehingga kita bisa iterasi dengan menggunakan
+statement `for`.
 
 ## Menggunakan form
 
 Form adalah salah satu cara mengirimkan data dari frontend ke server selain
 menggunakan query parameter. Sejatinya, kita bisa mengirimkan data dari frontend
 ke server dengan menggunakan method GET atau method POST. Bedanya, dengan
-menggunakan method GET data yang dikirimkan ke server akan terlihat pada URL,
-sedangkan request POST akan mengirimkan request body.
+menggunakan method GET, data yang dikirimkan ke server akan terlihat pada URL,
+sedangkan request POST, data dikirim via request body.
 
 Agar lebih jelas, mari kita terapkan penggunaan form dengan method POST pada
 proyek kita. Kita akan membuat sebuah form untuk mengirimkan data pembuatan buku
-baru. Buatlah sebuah file baru pada views dengan nama buku.create.js. Isi dari
-form ini adalah sebuah tag form serderhana yang akan terdiri dari inputan untuk
-memasukan judul buku, tahun terbit dan pengarang.
+baru. Buatlah sebuah file baru pada directory **views** dengan nama
+**buku_create.ejs**. Isi dari form ini adalah sebuah tag form serderhana yang
+akan terdiri dari inputan untuk memasukan judul buku, tahun terbit dan
+pengarang.
 
 ```html
 <!DOCTYPE html>
@@ -460,7 +459,7 @@ Data yang kita kirimkan terdiri dari beberapa variabel yaitu `judul`,
 `tahun_terbit`, dan `pengarang`.
 
 Selanjutnya mari kita buat path `/buku/create` untuk menampilkan template form
-yang sudah kita di atas.
+yang sudah kita siapkan di atas.
 
 ```javascript
 app.get("/buku/create", (req, res) => {
@@ -482,9 +481,9 @@ app.post("/buku/simpan", (req, res) => {
 });
 ```
 
-Variabel dari POST request dapat kita akses melalui objek `req.body`. Namun
+Value dari setiap elemen form dapat kita akses melalui object `req.body`. Namun
 sebelum itu kita juga harus menambahkan konfigurasi agar express dapat membaca
-request body.
+request body dari object `req.body`.
 
 ```javascript
 const express = require("express");
@@ -497,16 +496,16 @@ app.use(express.urlencoded({ extended: true }));
 
 Pada perubahan di atas, kita meminta express untuk menambahkan 2 buah middleware
 baru pada request dengan method `use()`. Middleware `express.json()` didaftarkan
-agar aplikasi dapat menerima request body dengan type JSON, sedangkan
+agar aplikasi dapat menerima request body dengan tipe JSON, sedangkan
 `express.urlencoded({ extended: true })` berfungsi untuk URL-encoded body.
 
 Buka web browser dan kunjungi `http://localhost:3000/buku/create`. Isikan form
 dan klik Simpan. Perhatikan jendela console, pastikan semua variabel yang
 dikirimkan telah berhasil muncul.
 
-Selanjutnya kita akan menambahkan proses menyimpan data ke dalam database. Data
-yang berhasil kita tangkap dari req.body akan kita simpan dengan mekeksekusi
-query insert dengan knex.
+Selanjutnya kita akan menambahkan proses menyimpan data ke dalam table buku.
+Data yang berhasil kita tangkap dari `req.body` akan kita simpan dengan
+mekeksekusi method `knex.insert()`.
 
 Lakukan perubahan berikut pada path `/buku/simpan`.
 
@@ -532,7 +531,7 @@ app.post("/buku/simpan", function (req, res) {
 });
 ```
 
-Ulangi proses pengisian data pada path `buku/create` dan check data dalam table
+Ulangi proses pengisian data pada path `buku/create` dan cek data dalam table
 buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil
 pada jendela console.
 
