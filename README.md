@@ -564,6 +564,7 @@ mendalami berbagai macam konsep lain seperti:
 
 ## Referensi:
 
+- [Dasar Javasript](https://teal-sled-175.notion.site/Belajar-JS-9086b9ad5eb44dfebb2da08181fe45d0?pvs=4)
 - [Express](https://expressjs.com/)
 - [EJS](https://ejs.co/)
 - [Knex.js](https://knexjs.org/)
