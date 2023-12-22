@@ -1,3 +1,5 @@
+# Tutorial Express Basic
+
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
 menggunakan ExpressJS. ExpressJs adalah salah satu framework untuk membuat
 Fullstack web application. Express sangat meninimal, mudah dipelajari, dan
@@ -9,7 +11,7 @@ proses pembuatan aplikasi menjadi lebih mudah dan solid. Express bisa
 disandingkan dengan berbagai macam template engine, ORM, ataupun framework lain
 untuk membuat aplikasi web yang solid dan prima.
 
-# Memulai Proyek Express
+## Memulai Proyek Express
 
 Pertama, mari kita buat sebuah proyek NodeJS dengan menggunakan perintah
 `node init`.
@@ -51,7 +53,7 @@ app.listen(port, () => {
 Kemudian, kita bisa menjalankan web server dengan menggunakan perintah
 `node index.js`. Buka web browser dan kunjungi `http://localhost:3000`
 
-# Menambahkan Path
+## Menambahkan Path
 
 Kita bisa menambahkan path dengan menggunakan method `get()` atau `post()`
 method pada express object. Pada contoh sebelumnya kita sudah menambahkan path
@@ -118,7 +120,7 @@ Coba akses http://localhost:3000/profile?nama=Agus melalui web browser. Jika
 tidak error, Akan tampil teks `Ini adalah halaman profile Agus` pada jendela web
 browser.
 
-# Menggunakan template enggine
+## Menggunakan template enggine
 
 Template engine merupakan library yang bisa kita gunakan untuk menghasilkan HTML
 template. Pada contoh sebelumnya, response yang kita berikan ketika sebuah path
@@ -334,7 +336,8 @@ menampilkan array of object yang berisikan data yang diambil dari database.
 
 ## Menampilkan hasil select query ke dalam template
 
-Selanjutnya mari kita tampilkan setiap data yang sudah diambil dari basis data ke dalam template atau view. 
+Selanjutnya mari kita tampilkan setiap data yang sudah diambil dari basis data
+ke dalam template atau view.
 
 Kita akan melakukan perubahan pada handler path `/buku` dengan menambahkan code
 yang menampilkan hasil query ke dalam template `buku.index.ejs` di atas:
@@ -352,10 +355,8 @@ app.get("/buku", (req, res) => {
 });
 ```
 
-
-
-Kemudian Siapkan sebuah file `ejs` dengan nama
-`buku.index.ejs` pada directory `views`.
+Kemudian Siapkan sebuah file `ejs` dengan nama `buku.index.ejs` pada directory
+`views`.
 
 ```bash
 mkdir views/buku.index.ejs
@@ -384,71 +385,86 @@ Kemudian isikan kode berikut ini:
 </html>
 ```
 
-Kita bisa lihat pada `buku.index.ejs`, property `buku` dari `index.js` berubah menjadi variabel. `buku` merupakan array yang berisikan objek hasil dari query database, sehingga kita bisa iterasi dengan menggunakan statement `for`.
+Kita bisa lihat pada `buku.index.ejs`, property `buku` dari `index.js` berubah
+menjadi variabel. `buku` merupakan array yang berisikan objek hasil dari query
+database, sehingga kita bisa iterasi dengan menggunakan statement `for`.
 
 ## Menggunakan form
 
-Form adalah salah satu cara mengirimkan data dari frontend ke server selain menggunakan query parameter. Sejatinya, kita bisa mengirimkan data dari frontend ke server dengan menggunakan method GET atau method POST. Bedanya, dengan menggunakan method GET data yang dikirimkan ke server akan terlihat pada URL, sedangkan request POST akan mengirimkan request body.
+Form adalah salah satu cara mengirimkan data dari frontend ke server selain
+menggunakan query parameter. Sejatinya, kita bisa mengirimkan data dari frontend
+ke server dengan menggunakan method GET atau method POST. Bedanya, dengan
+menggunakan method GET data yang dikirimkan ke server akan terlihat pada URL,
+sedangkan request POST akan mengirimkan request body.
 
-Agar lebih jelas, mari kita terapkan penggunaan form dengan method POST pada proyek kita. Kita akan membuat sebuah form untuk mengirimkan data pembuatan buku baru. Buatlah sebuah file baru pada views dengan nama buku.create.js. Isi dari form ini adalah sebuah tag form serderhana yang akan terdiri dari inputan untuk memasukan judul buku, tahun terbit dan pengarang.
+Agar lebih jelas, mari kita terapkan penggunaan form dengan method POST pada
+proyek kita. Kita akan membuat sebuah form untuk mengirimkan data pembuatan buku
+baru. Buatlah sebuah file baru pada views dengan nama buku.create.js. Isi dari
+form ini adalah sebuah tag form serderhana yang akan terdiri dari inputan untuk
+memasukan judul buku, tahun terbit dan pengarang.
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buat Buku Baru</title>
     <style>
-        input {
-            display: block;
-            margin-top: 5px;
-        }
+      input {
+        display: block;
+        margin-top: 5px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <form method="post" action="buku/simpan">
-        <label>Judul Buku</label>
-        <input type="text" name="judul" />
-        <label>Tahun Terbit</label>
-        <input type="number" name="tahun_terbit" />
-        <label>Pengarang</label>
-        <input type="text" name="pengarang" />
-        <input type="submit"  value="Simpan">
+      <label>Judul Buku</label>
+      <input type="text" name="judul" />
+      <label>Tahun Terbit</label>
+      <input type="number" name="tahun_terbit" />
+      <label>Pengarang</label>
+      <input type="text" name="pengarang" />
+      <input type="submit" value="Simpan" />
     </form>
-    
-</body>
+  </body>
 </html>
 ```
 
-Dalam `buku.create.ejs` kita menambahkan form yang memiliki attribute action ke path `buku/simpan`. Selanjutnya kita akan membuat path ini dengan handlernya. Data yang kita kirimkan terdiri dari beberapa variabel yaitu `judul`, `tahun_terbit`, dan `pengarang`.
+Dalam `buku.create.ejs` kita menambahkan form yang memiliki attribute action ke
+path `buku/simpan`. Selanjutnya kita akan membuat path ini dengan handlernya.
+Data yang kita kirimkan terdiri dari beberapa variabel yaitu `judul`,
+`tahun_terbit`, dan `pengarang`.
 
-Selanjutnya mari kita buat path `/buku/create` untuk menampilkan template form yang sudah kita di atas.
+Selanjutnya mari kita buat path `/buku/create` untuk menampilkan template form
+yang sudah kita di atas.
 
 ```javascript
-app.route('/buku/create', (req, res) => {
-  res.render('buku.create')
-})
+app.route("/buku/create", (req, res) => {
+  res.render("buku.create");
+});
 ```
 
 Selanjutnya mari kita buat path `/buku/simpan` beserta dengan handler-nya.
 
 ```javascript
-app.post('/buku/simpan', (req, res) => {
-  const judul = req.body.judul
-  const tahun_terbit = req.body.tahun_terbit
-  const pengarang = req.body.pengarang
+app.post("/buku/simpan", (req, res) => {
+  const judul = req.body.judul;
+  const tahun_terbit = req.body.tahun_terbit;
+  const pengarang = req.body.pengarang;
 
-  console.log("Judul:", judul)
-  console.log("Tahun Terbit:", tahun_terbit)
-  console.log("Pengarang:", pengarang)
-})
+  console.log("Judul:", judul);
+  console.log("Tahun Terbit:", tahun_terbit);
+  console.log("Pengarang:", pengarang);
+});
 ```
 
-Variabel dari POST request dapat kita akses melalui objek `req.body`. Namun sebelum itu kita juga harus menambahkan konfigurasi agar express dapat membaca request body. 
+Variabel dari POST request dapat kita akses melalui objek `req.body`. Namun
+sebelum itu kita juga harus menambahkan konfigurasi agar express dapat membaca
+request body.
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
 
 app.use(express.json());
@@ -456,31 +472,43 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 ```
 
-Pada perubahan di atas, kita meminta express untuk menambahkan 2 buah middleware baru pada request dengan method `use()`. Middleware `express.json()` didaftarkan agar aplikasi dapat menerima request body dengan type JSON, sedangkan `express.urlencoded({ extended: true })` berfungsi untuk URL-encoded body.
+Pada perubahan di atas, kita meminta express untuk menambahkan 2 buah middleware
+baru pada request dengan method `use()`. Middleware `express.json()` didaftarkan
+agar aplikasi dapat menerima request body dengan type JSON, sedangkan
+`express.urlencoded({ extended: true })` berfungsi untuk URL-encoded body.
 
-Buka web browser dan kunjungi `http://localhost:3000/buku/create`. Isikan form dan klik Simpan. Perhatikan jendela console, pastikan semua variabel yang dikirimkan telah berhasil muncul.
+Buka web browser dan kunjungi `http://localhost:3000/buku/create`. Isikan form
+dan klik Simpan. Perhatikan jendela console, pastikan semua variabel yang
+dikirimkan telah berhasil muncul.
 
-Selanjutnya kita akan menambahkan proses menyimpan data ke dalam database. Data yang berhasil kita tangkap dari req.body akan kita simpan dengan mekeksekusi query insert dengan knex.
+Selanjutnya kita akan menambahkan proses menyimpan data ke dalam database. Data
+yang berhasil kita tangkap dari req.body akan kita simpan dengan mekeksekusi
+query insert dengan knex.
 
 Lakukan perubahan berikut pada path `/buku/simpan`.
+
 ```javascript
-app.post('/buku/simpan', function(req, res) {
-    const judul = req.body.judul;
-    const tahun_terbit = req.body.tahun_terbit;
-    const pengarang = req.body.pengarang;
-    
-    knex('buku').insert({
+app.post("/buku/simpan", function (req, res) {
+  const judul = req.body.judul;
+  const tahun_terbit = req.body.tahun_terbit;
+  const pengarang = req.body.pengarang;
+
+  knex("buku")
+    .insert({
       judul: judul,
       tahun_terbit: tahun_terbit,
       pengarang: pengarang,
-
-    }).then(()=>{
-      res.send('Data berhasil disimpan')
-    }).catch((err) => {
-      console.log(err)
-      res.send('Terjadi kesalah saat mennyimpan data')
     })
+    .then(() => {
+      res.send("Data berhasil disimpan");
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send("Terjadi kesalah saat mennyimpan data");
+    });
 });
 ```
 
-Ulangi proses pengisian data pada path `buku/create` dan check data dalam table buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil pada jendela console.
+Ulangi proses pengisian data pada path `buku/create` dan check data dalam table
+buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil
+pada jendela console.
