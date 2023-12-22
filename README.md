@@ -11,20 +11,21 @@ proses pembuatan aplikasi menjadi lebih mudah dan solid. Express bisa
 disandingkan dengan berbagai macam template engine, ORM, ataupun framework lain
 untuk membuat aplikasi web yang solid dan prima.
 
-## Requirement
+## Prasyarat
 
-Sebelum mencoba tutorial ini, pastikan Anda telah memahami beberapa konsep
-berikut:
+Agar dapat mengikuti tutorial ini dengan baik, ada baiknya Anda memahami
+beberapa konsep berikut terlebih dahulu:
 
 - Cara kerja web secara umum
-- HTML
-- CSS
-- Javascript Basic
-  - Variabel
+- Dasar HTML
+- Dasar CSS
+- Dasar Javascript yang terdiri dari:
+  - Variabel dan tipe data
   - Percabangan
   - Perulangan
   - Function
   - Object
+- Dasar SQL Database 
 - Basic NodeJS
 
 ## Memulai Proyek Express
