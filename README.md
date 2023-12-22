@@ -512,3 +512,8 @@ app.post("/buku/simpan", function (req, res) {
 Ulangi proses pengisian data pada path `buku/create` dan check data dalam table
 buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil
 pada jendela console.
+
+Referensi:
+- [Express](https://expressjs.com/)
+- [EJS](https://ejs.co/)
+- [Knex.js](https://knexjs.org/)
