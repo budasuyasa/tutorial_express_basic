@@ -16,6 +16,7 @@ untuk membuat aplikasi web yang solid dan prima.
 Sebelum mencoba tutorial ini, pastikan Anda telah memahami beberapa konsep
 berikut:
 
+- Cara kerja web secara umum
 - HTML
 - CSS
 - Javascript Basic
@@ -24,6 +25,7 @@ berikut:
   - Perulangan
   - Function
   - Object
+- Basic NodeJS
 
 ## Memulai Proyek Express
 
