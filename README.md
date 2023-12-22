@@ -17,6 +17,12 @@ Agar dapat mengikuti tutorial ini dengan baik, ada baiknya Anda memahami
 beberapa konsep berikut terlebih dahulu:
 
 - Cara kerja web secara umum
+  - Cara kerja web browser
+  - URL
+  - Query parameter
+  - Request
+    - Request method
+    - Response code
 - Dasar HTML
 - Dasar CSS
 - Dasar Javascript yang terdiri dari:
