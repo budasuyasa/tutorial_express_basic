@@ -11,6 +11,20 @@ proses pembuatan aplikasi menjadi lebih mudah dan solid. Express bisa
 disandingkan dengan berbagai macam template engine, ORM, ataupun framework lain
 untuk membuat aplikasi web yang solid dan prima.
 
+## Requirement
+
+Sebelum mencoba tutorial ini, pastikan Anda telah memahami beberapa konsep
+berikut:
+
+- HTML
+- CSS
+- Javascript Basic
+  - Variabel
+  - Percabangan
+  - Perulangan
+  - Function
+  - Object
+
 ## Memulai Proyek Express
 
 Pertama, mari kita buat sebuah proyek NodeJS dengan menggunakan perintah
@@ -514,6 +528,7 @@ buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil
 pada jendela console.
 
 Referensi:
+
 - [Express](https://expressjs.com/)
 - [EJS](https://ejs.co/)
 - [Knex.js](https://knexjs.org/)
