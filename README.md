@@ -164,8 +164,7 @@ engine express pada bagian selanjutnya.
 
 ## Menggunakan EJS
 
-EJS memungkinkan kita untuk menggunakan Javascript di dalam HTML. Ini
-memungkinkan kita untuk menambahkan logic di dalam template HTML. Misalkan kita
+EJS memungkinkan kita untuk menggunakan Javascript di dalam HTML. Misalkan kita
 bisa mengeksekusi Javascript statement seperti `for`, `if`, `forEach` dan
 berbagai keyword lainnya.
 
