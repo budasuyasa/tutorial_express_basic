@@ -14,7 +14,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/profile', (req, res) => {
-    res.send('Ini adalah halaman profile')
+    res.render('profile', {
+        nama: 'Tugus',
+        kelas: 'Pagi2'
+    })
 });
 
 
