@@ -539,6 +539,14 @@ Ulangi proses pengisian data pada path `buku/create` dan cek data dalam table
 buku. Jika berhasil, data baru akan ditambahkan, jika tidak, error akan tampil
 pada jendela console.
 
+## Tips
+
+- Install [extension ejs](https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-ejs-support) pada Visual Studio Code untuk meningkatkan dukungan terhadap ejs file. Extension ini memiliki beberapa fitur seperti code higlihgt, snippet, linter adn lainnya.
+- Gunakan [nodemon](https://nodemon.io/) untuk menghindari restart server setiap melakukan perubahan pada `index.js`. TLDR cara menggunakan nodemon bisa dengan cara sebagai berikut:
+  1. Install nodemon dengan `npm install --save-dev nodemon`
+  2. Start web server dengan `nodemon index.js`
+
+
 ## Langkah belajar selanjutnya
 
 Tutorial ini hanya mengulas bagian dasar yang perlu diketahui untuk membangun
