@@ -7,7 +7,7 @@
 </head>
 <body>
     <!-- Menampilkan data buku yang dishare dari index.js -->
-    <h1>Data Buku</h1>
+    <h1>Daftar Buku</h1>
     <ul>
         <!-- Karena buku berupa array, gunakan perulanagan untuk menampilkan setiap data buku -->
         <!-- Dengan perulangan menggunakan statement for -->
@@ -28,6 +28,11 @@
                 <strong><%= buku.judul %></strong> - <%= buku.pengarang %> 
             </li>
         <% }) %>
+
     </ul>
+
+    <div>
+        <a href="/buku/create">Tambahkan Buku Baru</a>
+    </div>
 </body>
 </html>
