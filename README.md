@@ -549,7 +549,7 @@ pada jendela console.
   [extension ejs](https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-ejs-support)
   pada Visual Studio Code untuk meningkatkan dukungan terhadap ejs file.
   Extension ini memiliki beberapa fitur seperti code highlight yang lebih baik,
-  snippet, linter adn lainnya.
+  snippet, linter, dan lainnya.
 - Gunakan [nodemon](https://nodemon.io/) untuk menghindari restart server setiap
   melakukan perubahan pada `index.js`. TLDR cara menggunakan nodemon bisa dengan
   cara sebagai berikut:
