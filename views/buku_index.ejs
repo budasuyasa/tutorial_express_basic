@@ -10,9 +10,24 @@
     <h1>Data Buku</h1>
     <ul>
         <!-- Karena buku berupa array, gunakan perulanagan untuk menampilkan setiap data buku -->
+        <!-- Dengan perulangan menggunakan statement for -->
+        <h2>Menggunakan for</h2>
         <% for( let index = 0; index < buku.length; index++ ) { %>
-            <li><%= buku[index].judul %></li>
+            <li>
+                <strong><%= buku[index].judul %></strong> - <%= buku[index].pengarang %> 
+            </li>
         <% } %>
+
+        <h2>Menggunakan foreach</h2>
+        <!-- 
+            untuk melakukan iterasi data buku kita juga bisa menggunakan
+            method foreach pada array
+          -->
+        <% buku.forEach((buku,index) => { %>
+            <li>
+                <strong><%= buku.judul %></strong> - <%= buku.pengarang %> 
+            </li>
+        <% }) %>
     </ul>
 </body>
 </html>
