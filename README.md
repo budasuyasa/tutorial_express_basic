@@ -155,7 +155,7 @@ http://localhost:3000/buku/edit/5
 ```
 
 Misalkan segment ke 3 (angka `5`) dari URL di bernilai dinamis. Bisa `5`, bisa
-`4`, `110` dan begitu seterusnya. Kita bisa membuat route dengan segment dinamis
+`4`, bisa `110`, dan begitu seterusnya. Kita bisa membuat route dengan segment dinamis
 dengan menambahkan prefix (awalan) `:` pada nama segment. Kemudian, nilai dari
 segment tersebut kita bisa akses dari obejct `req.params`. Contoh:
 
