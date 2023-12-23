@@ -19,10 +19,8 @@
         <% } %>
 
         <h2>Menggunakan foreach</h2>
-        <!-- 
-            untuk melakukan iterasi data buku kita juga bisa menggunakan
-            method foreach pada array
-          -->
+        <!-- Untuk melakukan iterasi data buku kita juga bisa menggunakan
+        method foreach pada array -->
         <% buku.forEach((buku,index) => { %>
             <li>
                 <strong><%= buku.judul %></strong> - <%= buku.pengarang %> 
