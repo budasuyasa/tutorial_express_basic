@@ -2,7 +2,7 @@
 
 | Author      | Last Update            |
 | ----------- | ---------------------- |
-| Buda Suyasa | 2023-12-23 22:23 UTC+8 |
+| Buda Suyasa | 2023-12-23 22:33 UTC+8 |
 
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
 menggunakan ExpressJS atau secara singkat bisa disebut engan Express. ExpressJs
