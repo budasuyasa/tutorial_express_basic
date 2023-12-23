@@ -24,7 +24,8 @@ app.get('/profile', (req, res) => {
 app.get('/buku', (req, res) => {
     knex('buku').select('*')
         .then((data)=> {
-            res.render('buku.index', {
+            console.log(data);
+            res.render('buku_index', {
                 buku: data
             })
         })

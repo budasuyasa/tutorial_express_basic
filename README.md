@@ -402,7 +402,7 @@ Kemudian isikan kode berikut ini:
     <ul>
       <!-- Karena buku berupa array, gunakan perulanagan untuk menampilkan setiap data buku -->
       <% for( let index = 0; index < buku.length; index++ ) { %>
-      <li><%= buku.judul %></li>
+      <li><%= buku[index].judul %></li>
       <% } %>
     </ul>
   </body>
