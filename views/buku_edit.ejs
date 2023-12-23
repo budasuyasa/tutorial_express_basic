@@ -25,13 +25,13 @@
         <a href="/buku">Kembali ke Daftar Buku</a>
     </div>
     <div>
-        <form method="post" action="/buku/simpan">
+        <form method="post" action="/buku/update/<%= buku.id %>">
             <label>Judul Buku</label>
-            <input type="text" name="judul" />
+            <input type="text" name="judul" value="<%= buku.judul %>" />
             <label>Tahun Terbit</label>
-            <input type="number" name="tahun_terbit" />
+            <input type="number" name="tahun_terbit" value="<%= buku.tahun_terbit %>" />
             <label>Pengarang</label>
-            <input type="text" name="pengarang" />
+            <input type="text" name="pengarang" value="<%= buku.pengarang %>" />
             <input type="submit" value="Simpan">
         </form>
     </div>

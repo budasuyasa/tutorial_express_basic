@@ -2,7 +2,7 @@
 
 | Author      | Last Update            |
 | ----------- | ---------------------- |
-| Buda Suyasa | 2023-12-23 19:47 UTC+8 |
+| Buda Suyasa | 2023-12-23 22:23 UTC+8 |
 
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
 menggunakan ExpressJS atau secara singkat bisa disebut engan Express. ExpressJs
@@ -144,6 +144,39 @@ app.get("/profile", function (req, res) {
 Coba akses http://localhost:3000/profile?nama=Agus melalui web browser. Jika
 tidak error, Akan tampil teks `Ini adalah halaman profile Agus` pada jendela web
 browser.
+
+## Path Dinamis
+
+Kita juga bisa menangkap value segmen path URL dengan menggunakan object
+`req.params`. Misalkan URL sebagai berikut:
+
+```
+http://localhost:3000/buku/edit/5
+```
+
+Misalkan segment ke 3 (angka `5`) dari URL di bernilai dinamis. Bisa `5`, bisa
+`4`, `110` dan begitu seterusnya. Kita bisa membuat route dengan segment dinamis
+dengan menambahkan prefix (awalan) `:` pada nama segment. Kemudian, nilai dari
+segment tersebut kita bisa akses dari obejct `req.params`. Contoh:
+
+```javascript
+app.get("http://localhost:3000/buku/edit/:id", (req, res) => {
+  // mengakses dynamic path pada segment ke 3 dari URL dengan nama id
+  const id = req.params.id;
+  console.log("Nilai dari path pada segment ketiga (id) adalah:", id);
+});
+```
+
+Coba akses URL berikut melalui web browser, dan lihat log pada jendela console :
+
+```
+http://localhost:3000/buku/edit/5
+http://localhost:3000/buku/edit/120
+```
+
+Cara ini biasanya digunakan sebagai alternatif untuk membuat URL lebih mudah
+dibaca dan membuat URL menjadi lebih ringkas, dibandingkan dengan menggunakan
+query parameter.
 
 ## Menggunakan template enggine
 
