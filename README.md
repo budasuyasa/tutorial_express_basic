@@ -1,9 +1,9 @@
 # Tutorial Express Dasar
 
 
-| Author      | Last Update         |
-| ----------- | ------------------- |
-| Buda Suyasa |  2023-12-23 19:47   |
+| Author      | Last Update             |
+| ----------- | ------------------------|
+| Buda Suyasa |  2023-12-23 19:47 UTC+8 |
 
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
 menggunakan ExpressJS atau secara singkat bisa disebut engan Express. ExpressJs
