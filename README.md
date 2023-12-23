@@ -155,9 +155,9 @@ http://localhost:3000/buku/edit/5
 ```
 
 Misalkan segment ke 3 (angka `5`) dari URL di bernilai dinamis. Bisa `5`, bisa
-`4`, bisa `110`, dan begitu seterusnya. Kita bisa membuat route dengan segment dinamis
-dengan menambahkan prefix (awalan) `:` pada nama segment. Kemudian, nilai dari
-segment tersebut kita bisa akses dari obejct `req.params`. Contoh:
+`4`, bisa `110`, dan begitu seterusnya. Kita bisa membuat route dengan segment
+dinamis dengan menambahkan prefix (awalan) `:` pada nama segment. Kemudian,
+nilai dari segment tersebut kita bisa akses dari obejct `req.params`. Contoh:
 
 ```javascript
 app.get("http://localhost:3000/buku/edit/:id", (req, res) => {
@@ -595,6 +595,9 @@ Tutorial ini hanya mengulas bagian dasar yang perlu diketahui untuk membangun
 aplikasi web dinamis dengan Javascript. Lanjutkan proses belajar dengan
 mendalami berbagai macam konsep lain seperti:
 
+- Repository ini berisikan contoh aplikasi CRUD dengan menggunakan Express, EJS,
+  dan KnexJS. Coba pelajari untuk melihat detail mekanisme yang dibahas pada
+  tutorial ini.
 - Form validation atau validasi form untuk melakukan validasi request body atau
   query parameter agar dapat patuh pada kriteria yang ditentukan. Referensi:
   [Express Validator](https://express-validator.github.io/docs/)
