@@ -1,9 +1,8 @@
 # Tutorial Express Dasar
 
-
-| Author      | Last Update             |
-| ----------- | ------------------------|
-| Buda Suyasa |  2023-12-23 19:47 UTC+8 |
+| Author      | Last Update            |
+| ----------- | ---------------------- |
+| Buda Suyasa | 2023-12-23 19:47 UTC+8 |
 
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
 menggunakan ExpressJS atau secara singkat bisa disebut engan Express. ExpressJs
@@ -546,11 +545,16 @@ pada jendela console.
 
 ## Tips
 
-- Install [extension ejs](https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-ejs-support) pada Visual Studio Code untuk meningkatkan dukungan terhadap ejs file. Extension ini memiliki beberapa fitur seperti code higlihgt, snippet, linter adn lainnya.
-- Gunakan [nodemon](https://nodemon.io/) untuk menghindari restart server setiap melakukan perubahan pada `index.js`. TLDR cara menggunakan nodemon bisa dengan cara sebagai berikut:
+- Install
+  [extension ejs](https://marketplace.visualstudio.com/items?itemName=DigitalBrainstem.javascript-ejs-support)
+  pada Visual Studio Code untuk meningkatkan dukungan terhadap ejs file.
+  Extension ini memiliki beberapa fitur seperti code highlight yang lebih baik,
+  snippet, linter adn lainnya.
+- Gunakan [nodemon](https://nodemon.io/) untuk menghindari restart server setiap
+  melakukan perubahan pada `index.js`. TLDR cara menggunakan nodemon bisa dengan
+  cara sebagai berikut:
   1. Install nodemon dengan `npm install --save-dev nodemon`
   2. Start web server dengan `nodemon index.js`
-
 
 ## Langkah belajar selanjutnya
 
