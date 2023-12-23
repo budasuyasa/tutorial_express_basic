@@ -29,7 +29,8 @@ beberapa konsep berikut terlebih dahulu:
     - Response code
 - Dasar HTML
 - Dasar CSS
-- Dasar Javascript yang terdiri dari:
+- [Dasar Javasript](https://teal-sled-175.notion.site/Belajar-JS-9086b9ad5eb44dfebb2da08181fe45d0?pvs=4)
+  yang terdiri dari:
   - Variabel dan tipe data
   - Percabangan
   - Perulangan
@@ -147,21 +148,25 @@ browser.
 
 ## Path Dinamis
 
-Kita juga bisa menangkap value segmen path URL dengan menggunakan object
-`req.params`. Misalkan URL sebagai berikut:
+Kita juga bisa menangkap segmen dari path dengan menggunakan object
+`req.params`. Misalkan URL seperti ini:
 
 ```
 http://localhost:3000/buku/edit/5
 ```
 
-Misalkan segment ke 3 (angka `5`) dari URL di bernilai dinamis. Bisa `5`, bisa
-`4`, bisa `110`, dan begitu seterusnya. Kita bisa membuat route dengan segment
-dinamis dengan menambahkan prefix (awalan) `:` pada nama segment. Kemudian,
-nilai dari segment tersebut kita bisa akses dari obejct `req.params`. Contoh:
+Misalkan segment ke 3 (angka `5`) dari URL di atas bernilai dinamis. Bisa `5`,
+bisa `4`, bisa `110`, dan begitu seterusnya. Kita bisa membuat route dengan
+segment dinamis dengan menambahkan awalan `:` pada nama segment.
+Kemudian, nilai dari segment tersebut kita bisa akses dari obejct `req.params`.
+Contoh:
 
 ```javascript
+// membuat segment ke-3 dari URL dinamis
+// urutan path dihitung dari path pertama setelah domain
 app.get("http://localhost:3000/buku/edit/:id", (req, res) => {
-  // mengakses dynamic path pada segment ke 3 dari URL dengan nama id
+  // menangkap value dari segment path ketiga sesuai dengan namanya melalui
+  // object req.params
   const id = req.params.id;
   console.log("Nilai dari path pada segment ketiga (id) adalah:", id);
 });
@@ -595,9 +600,9 @@ Tutorial ini hanya mengulas bagian dasar yang perlu diketahui untuk membangun
 aplikasi web dinamis dengan Javascript. Lanjutkan proses belajar dengan
 mendalami berbagai macam konsep lain seperti:
 
-- Repository ini berisikan contoh aplikasi CRUD dengan menggunakan Express, EJS,
-  dan KnexJS. Coba pelajari untuk melihat detail mekanisme yang dibahas pada
-  tutorial ini.
+- Project ini berisikan contoh aplikasi CRUD dengan menggunakan Express, EJS,
+  dan KnexJS. Sebagai langkah awal, pelajari, tiru, dan modifikasi code dalam
+  project ini sebagai langkah awal belajar. 
 - Form validation atau validasi form untuk melakukan validasi request body atau
   query parameter agar dapat patuh pada kriteria yang ditentukan. Referensi:
   [Express Validator](https://express-validator.github.io/docs/)
