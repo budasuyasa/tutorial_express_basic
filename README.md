@@ -602,7 +602,7 @@ mendalami berbagai macam konsep lain seperti:
 
 - Project ini berisikan contoh aplikasi CRUD dengan menggunakan Express, EJS,
   dan KnexJS. Sebagai langkah awal, pelajari, tiru, dan modifikasi code dalam
-  project ini sebagai langkah awal belajar. 
+  project ini untuk melatih pemahaman Anda. 
 - Form validation atau validasi form untuk melakukan validasi request body atau
   query parameter agar dapat patuh pada kriteria yang ditentukan. Referensi:
   [Express Validator](https://express-validator.github.io/docs/)
