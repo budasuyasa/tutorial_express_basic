@@ -627,3 +627,8 @@ mendalami berbagai macam konsep lain seperti:
 - [Express](https://expressjs.com/)
 - [EJS](https://ejs.co/)
 - [Knex.js](https://knexjs.org/)
+
+## Misc
+
+Jika Anda memiliki masukan atau request topik yang perlu ditambahkan pada tutorial
+ini, silahkan buat issue baru. Terima kasih.
