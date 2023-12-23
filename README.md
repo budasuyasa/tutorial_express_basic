@@ -36,6 +36,7 @@ beberapa konsep berikut terlebih dahulu:
   - Perulangan
   - Function
   - Object
+- Object Oriented Programming
 - Dasar SQL Database
 - Basic NodeJS
 
