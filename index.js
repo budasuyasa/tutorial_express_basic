@@ -105,7 +105,7 @@ app.post('/buku/update/:id', (req,res) => {
     let pengarang = req.body.pengarang
     let tahun_terbit = req.body.tahun_terbit
 
-    console.log('Judul dari form: ', judul)
+    console.log('Judul dari form adalah: ', judul)
     console.log('Pengarang dari form: ', pengarang)
     console.log('Tahun terbit dari form: ', tahun_terbit)
 

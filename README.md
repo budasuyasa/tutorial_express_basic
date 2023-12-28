@@ -1,9 +1,21 @@
 # Tutorial Express Dasar
+Tutorial dan contoh project dengan menggunakan Express, EJS, dan KnexJS.
 
 | Author      | Last Update            |
 | ----------- | ---------------------- |
-| Buda Suyasa | 2023-12-23 22:33 UTC+8 |
+| Buda Suyasa | 2023-12-28 11:02 UTC+8 |
 
+## Setup
+Contoh project dalam repository ini dapat dijalankan dengan cara berikut:
+
+1. Clone atau donwload repository ini.
+2. Masuk ke dalam root directory project dengan terminal.
+3. Install dependencies dengan `npm install`.
+4. Jalankan web server dengan `node index.js`.
+5. Kunjungi `http://localhost:3000` pada web browser.
+
+
+## Web Development dengan Javascript dan Express
 Untuk membuat web application dengan menggunakan Javascript, kita bisa
 menggunakan ExpressJS atau secara singkat bisa disebut engan Express. ExpressJs
 adalah salah satu framework untuk membuat Fullstack web application. Express
