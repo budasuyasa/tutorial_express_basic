@@ -86,6 +86,7 @@ app.post("/buku/simpan", function (req, res) {
 
 app.get('/buku/edit/:id', (req, res) => {
     const id = req.params.id;
+    // select * from buku where id = id
     knex('buku').select('*').where('id', id)
         .then(([data]) => { // karena data adalah array, kita ada destruksi agar mengembalikan object pertama saja
             console.log(data);
@@ -99,12 +100,22 @@ app.get('/buku/edit/:id', (req, res) => {
 })
 
 app.post('/buku/update/:id', (req,res) => {
-    const id = req.params.id || req.body.id;  // tangkap id. id bisa diambil dari URL path, atau dari request body
-    knex('buku').where('id', id).update({
-        judul: req.body.judul,
-        tahun_terbit: req.body.tahun_terbit,
-        pengarang: req.body.pengarang,
+    const id =  req.params.id;  
+    let judul = req.body.judul
+    let pengarang = req.body.pengarang
+    let tahun_terbit = req.body.tahun_terbit
 
+    console.log('Judul dari form: ', judul)
+    console.log('Pengarang dari form: ', pengarang)
+    console.log('Tahun terbit dari form: ', tahun_terbit)
+
+    // update buku set judul = ?judul, pengarang = ?pengarang 
+    // tahun_terbit = ?tahun_terbit where id = ?id
+
+    knex('buku').where('id', id).update({
+        judul: judul,
+        tahun_terbit: tahun_terbit,
+        pengarang: pengarang,
     })
         .then((data) => { // karena data adalah array, kita ada destruksi agar mengembalikan object pertama saja
             console.log(data);
@@ -114,6 +125,17 @@ app.post('/buku/update/:id', (req,res) => {
             res.send('Terjadi error saat mengedit data buku');
         })
 
+})
+
+app.get('/buku/delete/:id', function(req, res){
+  // di sini kita melakukan proses delete
+  console.log("isi dari path id: ", req.params.id)
+  let id_buku = req.params.id
+
+  // delete from buku where id = ?
+  knex('buku').where('id', id_buku).del().then(function(){
+    res.send(`Data engan id ${id_buku} berhasil dihapus`)
+  })
 })
 
 // jalankan aplikasi pada port yang telah ditentukan
